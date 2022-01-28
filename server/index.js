@@ -20,6 +20,9 @@ let colors = [
   'red','blue','orange','pink','yellow'
 ]
 
+let characters = [
+  'Joe','Jake','Bryan','Kelly','Joseph','Issac'
+]
 
 
 // To get a compliment 
@@ -64,6 +67,14 @@ app.get('/api/color', (req,res) => {
   let randomColor = colors[randomIndex]
 
   res.status(200).send(randomColor)
+})
+
+// name
+app.get('/api/name', (req,res) => {
+  let randomIndex = Math.floor(Math.random() * characters.length)
+  let randomChar = characters[randomIndex]
+
+  res.status(200).send(randomChar)
 })
 
 

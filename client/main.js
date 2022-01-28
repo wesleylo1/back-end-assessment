@@ -6,6 +6,7 @@ const body = document.body;
 const h1 = document.querySelector('h1')
 const ul = document.querySelector('ul')
 const colBtn = document.querySelector('#color')
+const name = document.querySelector('#name')
 
 
 function compliment() {
@@ -47,6 +48,16 @@ function randomColor() {
     })
 }
 
+// random character
+function randomChar() {
+    axios.get('http://localhost:4000/api/name').then(res => {
+        const data = res.data;
+        const h2 = document.createElement('h2')
+        h2.textContent = data;
+        body.appendChild(h2)
+    })
+}
+
 
 
 
@@ -54,3 +65,4 @@ compBtn.addEventListener('click',compliment)
 fortuneBtn.addEventListener('click',fortune)
 submit.addEventListener('click',newFortune)
 colBtn.addEventListener('click',randomColor)
+name.addEventListener('click',randomChar)
