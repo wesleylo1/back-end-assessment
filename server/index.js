@@ -16,6 +16,10 @@ let fortunes = [
   "Listen not to vain words of empty tongue."
 ]
 
+let colors = [
+  'red','blue','orange','pink','yellow'
+]
+
 
 
 // To get a compliment 
@@ -54,19 +58,16 @@ app.post('/api/new', (req,res) => {
   res.status(200).send(newFortune)
 })
 
-// random pokemon item
-function item() {
-  axios
-      .get('https://pokeapi.co/api/v2/item/')
-      .then((res) => {
-          let bodyElement = document.body;
-          let h3 = document.querySelector('h3')
-          let random = Math.floor(Math.random() * res.data.results.length)
-          let ranItem = res.data.results[random].name
-          h3.textContent = ranItem
-          bodyElement.appendChild(h3)
-      })
-      .catch(err => console.log(err))
-    }
+// color name
+app.get('/api/color', (req,res) => {
+  let randomIndex = Math.floor(Math.random() * colors.length);
+  let randomColor = colors[randomIndex]
+
+  res.status(200).send(randomColor)
+})
+
+
+
+
 
 app.listen(4000, () => console.log("Server running on 4000"))
