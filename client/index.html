@@ -5,16 +5,18 @@
   </head>
   <body class="container">
     <button id="complimentButton">Get a compliment</button>
+    <br><br>
+    <button id="fortuneButton">Get a fortune</button>
+    <br><br>
+    <h1>List of Fortunes</h1>
+    <input type="text" id="fortuneInput" placeholder="Enter your fortune">
+    <button id="submit">Submit</button>
+    <ul></ul>
+  
+
+
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-      document.getElementById("complimentButton").onclick = function () {
-        axios.get("http://localhost:4000/api/compliment/")
-            .then(function (response) {
-              const data = response.data;
-              alert(data);
-            });
-      };
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
