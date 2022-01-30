@@ -7,17 +7,25 @@
     <button id="complimentButton">Get a compliment</button>
     <br><br>
     <button id="fortuneButton">Get a fortune</button>
-    <br><br>
-    <button id="color">get a random color name</button>
-    <br><br>
-    <button id="name">get a random name</button>
-    <h1>List of Fortunes</h1>
-    <input type="text" id="fortuneInput" placeholder="Enter your fortune">
-    <button id="submit">Submit</button>
-    <ul></ul>
-  
+    <p class="fortune-text"></p>
+    <h1>Add a character to the database</h1>
+    <form>
+      <input 
+          type='text'
+          id="name"
+          placeholder="Enter full name"/>
+      <input 
+          type='text'
+          id="age"
+          placeholder='Enter age'/>
+      <button>add character</button>
+  </form>
+  <br>
+  <button class="character-button">Choose a random character</button>
+  <p class="character-text"></p>
 
-
+  <button class="joke">click for a joke</button>
+  <p class="joke2"></p>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
